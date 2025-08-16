@@ -1,4 +1,4 @@
-package dev.sipho.dev_connect_service;
+package dev.sipho.dev.connect.service;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

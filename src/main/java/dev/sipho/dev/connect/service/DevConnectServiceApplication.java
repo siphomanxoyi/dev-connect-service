@@ -1,4 +1,4 @@
-package dev.sipho.dev_connect_service;
+package dev.sipho.dev.connect.service;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
