@@ -39,4 +39,13 @@ public class GlobalExceptionHandler {
                 .badRequest()
                 .body(ResponseUtil.failure(null, "Validation errors", ex.getErrors()));
     }
+
+    @ExceptionHandler(DevConnectUserNotFoundException.class)
+    public ResponseEntity<ApiResponse<Void>> handleDevConnectUserNotFoundException(DevConnectUserException ex){
+        return ResponseEntity
+                .notFound()
+                .build();
+    }
+
+    // Make use of this for other not found exceptions and handle generically
 }

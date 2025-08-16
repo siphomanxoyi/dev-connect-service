@@ -4,6 +4,7 @@ import dev.sipho.dev.connect.service.dto.user.DevConnectUserDto;
 import dev.sipho.dev.connect.service.dto.user.UserRegistrationRequest;
 import dev.sipho.dev.connect.service.dto.user.UserRegistrationResponse;
 import dev.sipho.dev.connect.service.exception.DevConnectUserException;
+import dev.sipho.dev.connect.service.exception.DevConnectUserNotFoundException;
 import dev.sipho.dev.connect.service.mapper.DevConnectUserMapper;
 import dev.sipho.dev.connect.service.repository.UserRepository;
 import lombok.extern.slf4j.Slf4j;
@@ -51,7 +52,7 @@ public class UserServiceImpl implements UserService {
     public DevConnectUserDto getUserById(Long id) {
         return userRepository.findById(id)
                 .map(DevConnectUserMapper::toDto)
-                .orElseThrow(() -> new DevConnectUserException("User with id: " + id + " cannot be found!"));
+                .orElseThrow(() -> new DevConnectUserNotFoundException("Username with id [%s] not found".formatted(id)));
     }
 
 
