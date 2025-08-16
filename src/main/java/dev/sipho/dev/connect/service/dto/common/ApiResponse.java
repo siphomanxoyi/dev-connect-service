@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
+import java.util.Map;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -13,5 +13,5 @@ public class ApiResponse <T> {
     private T data;
     private ApiStatus apiStatus;
     private String message;
-    private List<String> errors;
+    private Map<String, String> errors;
 }
